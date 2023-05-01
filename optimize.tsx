@@ -70,17 +70,20 @@ function palindrome(str: string): boolean {
 console.log(palindrome("mada"));
 
 // intersection
-function intersection(arr1: number[], arr2: number[]): number[] {
-  let newArr: number[] = arr1.concat(arr2);
-  let arrs: number[] | null = [];
-
-  for (let i = 0; i < newArr.length; i++) {
-    for (let j = i + 1; j < newArr.length; j++) {
-      if (newArr[i] == newArr[j]) {
-        arrs.push(newArr[i]);
+function intersection(arr1: number[], arr2: number[]): number[] | number {
+  if (arr1.length > 0 && arr2.length > 0) {
+    let newArr: number[] = arr1.concat(arr2);
+    let arrs: number[] | null = [];
+    for (let i = 0; i < newArr.length; i++) {
+      for (let j = i + 1; j < newArr.length; j++) {
+        if (newArr[i] == newArr[j]) {
+          arrs.push(newArr[i]);
+        }
       }
     }
+    return arrs;
+  } else {
+    return -1;
   }
-  return arrs;
 }
-console.log(intersection([1, 2, 3], [2, 3, 4]));
+console.log(intersection([1, 2, 3], []));
