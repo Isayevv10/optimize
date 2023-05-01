@@ -67,7 +67,7 @@ function palindrome(str: string): boolean {
   }
   return true;
 }
-console.log(palindrome("mada"));
+console.log(palindrome("madam"));
 
 // intersection
 function intersection(arr1: number[], arr2: number[]): number[] | number {
